@@ -34,8 +34,9 @@ public class RedisConfig {
         template.setConnectionFactory(connectionFactory);
         template.setKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(userSerializer); // Now saves with @class info
-        template.setValueSerializer(jsonSerializer); //  work with each object but before do anything flush redis
-        template.setHashValueSerializer(jsonSerializer);
+        template.setHashValueSerializer(userSerializer);
+//        template.setValueSerializer(jsonSerializer); //  work with each object but before do anything flush redis
+//        template.setHashValueSerializer(jsonSerializer);
 
         return template;
     }
