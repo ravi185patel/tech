@@ -1,0 +1,23 @@
+### run redis ###
+docker run --name redis -d -p 6379:6379 redis:latest
+
+### run kafka ###
+docker run -d -p 9092:9092 --name broker apache/kafka:latest
+
+### run application ###
+
+
+### post method to add score ###
+localhost:9001/scores
+json:
+{
+  "studentId": "104",
+  "studentName": "han",
+  "subject": "math",
+  "score": 70.5
+}
+
+### Get method to get top N score ###
+localhost:9001/leaderboard/math
+
+
